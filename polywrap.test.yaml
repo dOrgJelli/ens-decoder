@@ -1,0 +1,50 @@
+name: ens-decoder-tests
+format: 0.1.0
+jobs:
+  e2e:
+    steps:
+      - uri: file/build
+        method: decode
+        args:
+          txData:
+            to: "0xd7a4F6473f32aC2Af804B3686AE8F1932bC35750"
+            method: "setAddr"
+            parameters:
+              - name: "node"
+                type: "bytes32"
+                value: "0x94eb905515dbe342256a4ffc9cf5350856a299dc4b4c43d9899b0380863f3d0f"
+              - name: "coinType"
+                type: "uint256"
+                value: "60"
+              - name: "a"
+                type: "bytes"
+                value: "0x40689b1f36d798906fb6889b4e08cf01954a5d67"
+      - uri: file/build
+        method: decode
+        args:
+          txData:
+            to: "0xd7a4F6473f32aC2Af804B3686AE8F1932bC35750"
+            method: "setText"
+            parameters:
+              - name: "node"
+                type: "bytes32"
+                value: "0x94eb905515dbe342256a4ffc9cf5350856a299dc4b4c43d9899b0380863f3d0f"
+              - name: "key"
+                type: "string"
+                value: "text-record-1"
+              - name: "value"
+                type: "string"
+                value: "some value"
+      - uri: file/build
+        method: decode
+        args:
+          txData:
+            to: "0xd7a4F6473f32aC2Af804B3686AE8F1932bC35750"
+            method: "multicall"
+            parameters:
+              - name: "data"
+                type: "bytes[]"
+                value: '[
+                    "0x10f13a8c94eb905515dbe342256a4ffc9cf5350856a299dc4b4c43d9899b0380863f3d0f000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000006706172742d3100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009666f6f62617262617a0000000000000000000000000000000000000000000000",
+                    "0x10f13a8c94eb905515dbe342256a4ffc9cf5350856a299dc4b4c43d9899b0380863f3d0f000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000006706172742d320000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000966697a62757a62697a0000000000000000000000000000000000000000000000"
+                  ]'

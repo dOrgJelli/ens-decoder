@@ -1,0 +1,4 @@
+- [ ] improve error handling in the wrapper, most functions assume happy paths, and don't handle bad cases well.
+- [ ] implement handlers for all functions on the registry contract.
+- [ ] improve layout & naming conventions, instead of single file w/ a bunch of `decode_...` functions.
+- [ ] in the root `decode` function, handle cases where function names are overloaded w/ different arguments.
